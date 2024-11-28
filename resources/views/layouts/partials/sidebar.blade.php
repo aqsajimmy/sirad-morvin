@@ -7,17 +7,15 @@
         <div class="user-sidebar text-center">
             <div class="dropdown">
                 <div class="user-img">
-                    <img src="assets/images/users/avatar-7.jpg" alt="" class="rounded-circle">
+                    <img src="{{ asset('assets/images/users/avatar-7.jpg') }}" alt="" class="rounded-circle">
                     <span class="ld ld-dim avatar-online bg-success"></span>
                 </div>
                 <div class="user-info">
-                    <h5 class="mt-3 font-size-16 text-white">James Raphael</h5>
+                    <h5 class="mt-3 font-size-16 text-white">{{ ucwords(session('user.name')) }}</h5>
                     <span class="font-size-13 text-white-50">Administrator</span>
                 </div>
             </div>
         </div>
-
-
 
         <!--- Sidemenu -->
         <div id="sidebar-menu">
@@ -26,17 +24,20 @@
                 <li class="menu-title">Menu</li>
 
                 <li>
-                    <a href="index.html" class="waves-effect">
-                        <i class="dripicons-home"></i><span class="badge rounded-pill bg-info float-end">3</span>
+                    <a href="{{ route('admin.dashboard') }}" class="waves-effect">
+                        <i class="fa-duotone fa-solid fa-house"></i>
                         <span>Dashboard</span>
                     </a>
                 </li>
 
                 <li>
-                    <a href="calendar.html" class=" waves-effect">
-                        <i class="dripicons-calendar"></i>
-                        <span>Calendar</span>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="fa-duotone fa-solid fa-server"></i>
+                        <span>Data Master</span>
                     </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li><a href="{{ route('admin.pengguna') }}">Pengguna</a></li>
+                    </ul>
                 </li>
 
                 <li>
@@ -106,9 +107,9 @@
                     </ul>
                 </li>
 
-           
 
-           
+
+
 
                 <li>
                     <a href="javascript: void(0);" class="waves-effect">
@@ -214,7 +215,7 @@
                     </ul>
                 </li>
 
-               
+
 
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
